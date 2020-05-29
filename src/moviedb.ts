@@ -358,7 +358,7 @@ export class MovieDb {
     return this.makeRequest(HttpMethod.Delete, 'movie/:id/rating', params, axiosConfig)
   }
 
-  movieByCategory(params?: RequestParams & { category: string }, axiosConfig?: AxiosRequestConfig): Promise<types.MovieResponse | types.MovieNowPlayingResponse | types.PopularMoviesResponse | types.TopRatedMoviesResponse | types.UpcomingMoviesResponse> {
+  movieByCategory(params?: RequestParams & { category: 'latest' | 'now_playing' | 'popular' | 'top_rated' | 'upcoming' }, axiosConfig?: AxiosRequestConfig): Promise<types.MovieResponse | types.MovieNowPlayingResponse | types.PopularMoviesResponse | types.TopRatedMoviesResponse | types.UpcomingMoviesResponse> {
     return this.makeRequest(HttpMethod.Get, 'movie/:category', params, axiosConfig);
   }
 
