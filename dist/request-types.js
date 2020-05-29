@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.ExternalId = void 0;
 var ExternalId;
 (function (ExternalId) {
     ExternalId["ImdbId"] = "imdb_id";

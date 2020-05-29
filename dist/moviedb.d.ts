@@ -82,6 +82,9 @@ export declare class MovieDb {
     movieLists(params: string | number | types.MovieListsRequest, axiosConfig?: AxiosRequestConfig): Promise<types.MovieListsResponse>;
     movieRatingUpdate(params: types.RatingRequest, axiosConfig?: AxiosRequestConfig): Promise<types.PostResponse>;
     movieRatingDelete(params: string | number | types.IdRequestParams, axiosConfig?: AxiosRequestConfig): Promise<types.PostResponse>;
+    movieByCategory(params?: RequestParams & {
+        category: string;
+    }, axiosConfig?: AxiosRequestConfig): Promise<types.MovieResponse | types.MovieNowPlayingResponse | types.PopularMoviesResponse | types.TopRatedMoviesResponse | types.UpcomingMoviesResponse>;
     movieLatest(params?: string | RequestParams, axiosConfig?: AxiosRequestConfig): Promise<types.MovieResponse>;
     movieNowPlaying(params?: types.MovieNowPlayingRequest, axiosConfig?: AxiosRequestConfig): Promise<types.MovieNowPlayingResponse>;
     moviePopular(params?: types.PopularMoviesRequest, axiosConfig?: AxiosRequestConfig): Promise<types.PopularMoviesResponse>;

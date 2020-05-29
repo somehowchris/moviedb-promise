@@ -3,6 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.MovieDb = void 0;
 const axios_1 = __importDefault(require("axios"));
 const lodash_1 = require("lodash");
 const types_1 = require("./types");
@@ -256,6 +257,9 @@ class MovieDb {
     }
     movieRatingDelete(params, axiosConfig) {
         return this.makeRequest(types_1.HttpMethod.Delete, 'movie/:id/rating', params, axiosConfig);
+    }
+    movieByCategory(params, axiosConfig) {
+        return this.makeRequest(types_1.HttpMethod.Get, 'movie/:category', params, axiosConfig);
     }
     movieLatest(params, axiosConfig) {
         return this.makeRequest(types_1.HttpMethod.Get, 'movie/latest', lodash_1.isString(params) ? { language: params } : params, axiosConfig);
