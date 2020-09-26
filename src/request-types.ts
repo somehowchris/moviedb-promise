@@ -329,10 +329,10 @@ export interface GuestStar {
   profile_path?: string|null
 }
 
-export interface FindRequest extends Request {
-  id: ExternalId
+export interface FindRequest extends RequestParams {
+  id: string|number
   language?: string
-  external_source?: 'imdb_id'|'freebase_mid'|'freebase_id'|'tvdb_id'|'tvrage_id'|'facebook_id'|'twitter_id'|'instagram_id'
+  external_source: ExternalId
 }
 
 export interface PaginatedResponse extends Response {
@@ -467,7 +467,7 @@ export interface DiscoverMovieRequest extends RequestParams {
   primary_release_year?: number
   'primary_release_date.gte'?: string
   'primary_release_date.lte'?: string
-  'release_date.gte?': string
+  'release_date.gte'?: string
   'release_date.lte'?: string
   with_release_type?: number
   year?: number
@@ -494,8 +494,8 @@ export interface DiscoverMovieResponse extends PaginatedResponse {
 
 export interface DiscoverTvRequest extends RequestParams {
   sort_by?: string
-  'air_date.gte?': string
-  'air_date.lte?': string
+  'air_date.gte'?: string
+  'air_date.lte'?: string
   'first_air_date.gte'?: string
   'first_air_date.lte'?: string
   first_air_date_year?: number
