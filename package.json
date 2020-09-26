@@ -1,11 +1,11 @@
 {
   "name": "moviedb-promise",
   "description": "A library for interacting with themoviedb.org API using Promises",
-  "version": "3.0.2",
+  "version": "3.1.2",
   "scripts": {
     "test": "npm run build && ./node_modules/.bin/mocha ./tests/*.js --reporter spec",
     "build": "rm -rf ./dist && ./node_modules/.bin/tsc",
-    "prep:build":"rm -r ./dist && ./node_modules/.bin/tsc"
+    "prep:build": "rm -r ./dist && ./node_modules/.bin/tsc"
   },
   "repository": {
     "type": "git",
